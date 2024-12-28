@@ -1,277 +1,279 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-  }
-  
-  /* Top Bar Styling */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Top Bar Styling */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #6e7e85, #1b7db5);
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .logo {
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.top-bar .nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.top-bar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar .nav-links a:hover {
+  background-color: #ff6347;
+  transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #6e7e85, #2f3b42);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Gallery Section */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  gap: 30px; /* Increased gap between images */
+  padding: 60px 20px;
+  justify-items: center; /* Ensure items are centered */
+  grid-auto-rows: minmax(250px, auto); /* Ensures consistent row height */
+}
+
+/* Gallery Item */
+.gallery-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  width: 100%; /* Ensure all gallery items take up 100% of their grid space */
+  max-width: 400px; /* Limit the max width to avoid stretching */
+  margin-bottom: 40px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+  position: relative;
+  height: 250px; /* Set a fixed height */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Fix the image aspect ratio */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the entire image is visible without cropping */
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.image-container:hover img {
+  transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+.description {
+  text-align: center;
+}
+
+.description h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.artist-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.artist {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.artist:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.artist-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 3px solid #ff6347;
+  object-fit: cover;
+}
+
+.artist h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.artist-description {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
   .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(135deg, #6e7e85, #1b7db5);
-    padding: 20px 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
   }
-  
-  .top-bar .logo {
-    font-size: 28px;
-    font-weight: 600;
-    color: white;
-    text-transform: uppercase;
-  }
-  
+
   .top-bar .nav-links {
-    display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
   }
-  
-  .top-bar .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .top-bar .nav-links a:hover {
-    background-color: #ff6347;
-    transform: scale(1.05);
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(135deg, #6e7e85, #2f3b42);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  /* Gallery Section */
+
+  /* Show one image at a time for mobile */
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-    gap: 30px; /* Increased gap between images */
-    padding: 60px 20px;
-    justify-items: center; /* Ensure items are centered */
-    grid-auto-rows: minmax(250px, auto); /* Ensures consistent row height */
+    grid-template-columns: 1fr; /* One item per row */
   }
-  
-  /* Gallery Item */
-  .gallery-item {
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px;
-    width: 100%; /* Ensure all gallery items take up 100% of their grid space */
-    max-width: 400px; /* Limit the max width to avoid stretching */
-    margin-bottom: 40px;
-  }
-  
-  .gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .image-container {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .image-container:hover img {
-    transform: scale(1.1);
-  }
-  
-  .description {
-    text-align: center;
-  }
-  
-  .description h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .description p {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  /* Footer Styling */
-  footer {
-    background-color: #222;
-    color: #ddd;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
+
   .artist-container {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
   }
-  
+
   .artist {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
+    width: 200px;
   }
-  
-  .artist:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 480px) {
+  .top-bar .logo {
+    font-size: 24px;
   }
-  
-  .artist-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    border: 3px solid #ff6347;
-    object-fit: cover;
-  }
-  
-  .artist h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .artist-description {
+
+  .top-bar .nav-links a {
     font-size: 14px;
-    color: #ccc;
-    line-height: 1.6;
   }
-  
-  /* Media Queries for Responsiveness */
-  @media screen and (max-width: 768px) {
-    .top-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: center;
-    }
-  
-    .top-bar .nav-links {
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    /* Show one image at a time for mobile */
-    .gallery {
-      grid-template-columns: 1fr; /* One item per row */
-    }
-  
-    .artist-container {
-      flex-direction: row;
-      justify-content: center;
-    }
-  
-    .artist {
-      width: 200px;
-    }
+
+  .hero h1 {
+    font-size: 28px;
   }
-  
-  @media screen and (max-width: 480px) {
-    .top-bar .logo {
-      font-size: 24px;
-    }
-  
-    .top-bar .nav-links a {
-      font-size: 14px;
-    }
-  
-    .hero h1 {
-      font-size: 28px;
-    }
-  
-    .hero p {
-      font-size: 16px;
-    }
-  
-    .description h2 {
-      font-size: 20px;
-    }
-  
-    .description p {
-      font-size: 14px;
-    }
-  
-    .artist-img {
-      width: 120px;
-      height: 120px;
-    }
-  
-    .artist h3 {
-      font-size: 18px;
-    }
-  
-    .artist-description {
-      font-size: 12px;
-    }
-  
-    .artist-container {
-      justify-content: center;
-    }
+
+  .hero p {
+    font-size: 16px;
   }
-  
-  /* Ensure 2 images per row on large screens */
-  @media screen and (min-width: 1024px) {
-    .gallery {
-      grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-      gap: 30px; /* Adjusted gap for larger screens */
-    }
-  
-    /* Align the last item properly */
-    .gallery-item:nth-child(odd) {
-      grid-column: span 1; /* Prevent stretching */
-    }
-  
-    /* Force the last image to align with the first column if odd */
-    .gallery-item:last-child {
-      grid-column: span 1; /* Ensures the last odd image doesn't stretch */
-    }
+
+  .description h2 {
+    font-size: 20px;
   }
-  
+
+  .description p {
+    font-size: 14px;
+  }
+
+  .artist-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .artist h3 {
+    font-size: 18px;
+  }
+
+  .artist-description {
+    font-size: 12px;
+  }
+
+  .artist-container {
+    justify-content: center;
+  }
+}
+
+/* Ensure 2 images per row on large screens */
+@media screen and (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 30px; /* Adjusted gap for larger screens */
+  }
+
+  /* Align the last item properly */
+  .gallery-item:nth-child(odd) {
+    grid-column: span 1; /* Prevent stretching */
+  }
+
+  /* Force the last image to align with the first column if odd */
+  .gallery-item:last-child {
+    grid-column: span 1; /* Ensures the last odd image doesn't stretch */
+  }
+}
